@@ -14,26 +14,26 @@ class Player(pygame.sprite.Sprite):
         # Uploads standing positions facing left sprites
         self.__standL = []
         for sprite in range(5):
-            self.__standL.append(pygame.image.load('images/Player/Left/stand1_' + str(sprite) + '.png'))
+            self.__standL.append(pygame.image.load('Player/Left/stand1_' + str(sprite) + '.png'))
             
         # Uploads standing positions facing right sprites
         self.__standR = []
         for sprite in range(5):
-            self.__standR.append(pygame.image.load('images/Player/Right/stand1_' + str(sprite) + '.png'))
+            self.__standR.append(pygame.image.load('Player/Right/stand1_' + str(sprite) + '.png'))
             
         # Uploads walking positions facing left sprites
         self.__walkL = []
         for sprite in range(4):
-            self.__walkL.append(pygame.image.load('images/Player/Left/walk1_' + str(sprite) + '.png'))
+            self.__walkL.append(pygame.image.load('Player/Left/walk1_' + str(sprite) + '.png'))
             
         # Uploads walking positions facing right sprites
         self.__walkR = []
         for sprite in range(4):
-            self.__walkR.append(pygame.image.load('images/Player/Right/walk1_' + str(sprite) + '.png'))
+            self.__walkR.append(pygame.image.load('Player/Right/walk1_' + str(sprite) + '.png'))
             
         # Uploads jumping positions facing left and right
-        self.__jumpL = pygame.image.load('images/Player/Left/jump_0.png')
-        self.__jumpR = pygame.image.load('images/Player/Right/jump_0.png')
+        self.__jumpL = pygame.image.load('Player/Left/jump_0.png')
+        self.__jumpR = pygame.image.load('Player/Right/jump_0.png')
         
         # Creates self.image variable in standing right position
         self.image = self.__standR[0]
@@ -166,10 +166,10 @@ class TeleportSprites(pygame.sprite.Sprite):
         # Uploads teleport sprites
         self.__teleport = []
         for sprite in range(16):
-            self.__teleport.append(pygame.image.load('images/Teleport/teleport' + str(sprite) + '.png'))
+            self.__teleport.append(pygame.image.load('Teleport/teleport' + str(sprite) + '.png'))
         
         # Uploads a blank
-        self.__blank = pygame.image.load('images/Light/light3.png')
+        self.__blank = pygame.image.load('Light/light3.png')
         
         # Sets variable
         self.__playerPos = (0, 0, 0, 0)
@@ -231,12 +231,12 @@ class Fairy(pygame.sprite.Sprite):
         # Uploads moving sprites
         self.__move = []
         for sprite in range(4):
-            self.__move.append(pygame.image.load('images/Fairy/move' + str(sprite) + '.png'))
+            self.__move.append(pygame.image.load('Fairy/move' + str(sprite) + '.png'))
         
         # Uploads skill sprites
         self.__skill = []
         for sprite in range(4):
-            self.__skill.append(pygame.image.load('images/Fairy/skill' + str(sprite) + '.png'))
+            self.__skill.append(pygame.image.load('Fairy/skill' + str(sprite) + '.png'))
             
         # Sets self.image
         self.image = self.__move[0]
@@ -352,7 +352,7 @@ class Platform(Blocks):
         Blocks.__init__(self, pos)
         
         # Uploads big platform
-        self.__bigImage = pygame.image.load('images/Platform.png')
+        self.__bigImage = pygame.image.load('Others/Platform.png')
         
         # Creates surface
         self.image = pygame.Surface((50*size, 50))
@@ -374,7 +374,7 @@ class Wall(Blocks):
         Blocks.__init__(self, pos)
         
         # Uploads big wall photo
-        self.__colour = pygame.image.load('images/Wall.png')
+        self.__colour = pygame.image.load('Others/Wall.png')
         
         # Creates surface with correct criteria
         self.image = pygame.Surface((50*size, screen.get_height() + 10))
@@ -398,7 +398,7 @@ class Light(Blocks):
         # Uploads all light sprites
         self.__lightSprites = []
         for light in range(4):
-            self.__lightSprites.append(pygame.image.load('images/Light/light'+str(light)+ '.png'))
+            self.__lightSprites.append(pygame.image.load('Light/light'+str(light)+ '.png'))
         
         # Creates self.image
         self.image = self.__lightSprites[0]
@@ -505,26 +505,26 @@ class Wolf(Blocks):
         # Uploads Wolf biting sprites looking left
         self.__biteL = []
         for sprite in range(6):
-            self.__biteL.append(pygame.image.load('images/Wolf/Left/bite' + str(sprite) + '.png'))
+            self.__biteL.append(pygame.image.load('Wolf/Left/bite' + str(sprite) + '.png'))
         
         # Uploads Wolf biting sprites looking right
         self.__biteR = []
         for sprite in range(6):
-            self.__biteR.append(pygame.image.load('images/Wolf/Right/bite' + str(sprite) + '.png'))
+            self.__biteR.append(pygame.image.load('Wolf/Right/bite' + str(sprite) + '.png'))
         
         # Uploads Wolf walk animation looking left
         self.__walkL = []
         for sprite in range(4):
-            self.__walkL.append(pygame.image.load('images/Wolf/Left/walk' + str(sprite) + '.png'))
+            self.__walkL.append(pygame.image.load('Wolf/Left/walk' + str(sprite) + '.png'))
         
         # Uploads Wolf walk animation looking right
         self.__walkR = []
         for sprite in range(4):
-            self.__walkR.append(pygame.image.load('images/Wolf/Right/walk' + str(sprite) + '.png'))
+            self.__walkR.append(pygame.image.load('Wolf/Right/walk' + str(sprite) + '.png'))
         
         # Upload's Wolf's normal face
-        self.__faceL = pygame.image.load('images/Wolf/Left/face.png')
-        self.__faceR = pygame.image.load('images/Wolf/Right/face.png')
+        self.__faceL = pygame.image.load('Wolf/Left/face.png')
+        self.__faceR = pygame.image.load('Wolf/Right/face.png')
         
         # Start with normal walking animation
         self.image = self.__walkR[0]
@@ -669,7 +669,7 @@ class Background(pygame.sprite.Sprite):
         pygame.sprite.Sprite.__init__(self)
         
         # Sets image
-        self.image = pygame.image.load('images/background.png')
+        self.image = pygame.image.load('Others/background.png')
         self.image = self.image.convert()
         
         # Sets rect
@@ -724,7 +724,7 @@ class EnergyBar(pygame.sprite.Sprite):
         pygame.sprite.Sprite.__init__(self)
         
         # Creates border sprite for energy bar
-        self.__border = pygame.image.load('images/EnergyBar.png') 
+        self.__border = pygame.image.load('Others/EnergyBar.png') 
         
         # Sets Variables
         self.__screen = screen
@@ -791,7 +791,7 @@ class LifeCounter(pygame.sprite.Sprite):
         
         # Loads fonts
         self.__font = pygame.font.Font('BebasNeue Regular.ttf', 20)
-        self.__border = pygame.image.load('images/lifeBar.png')
+        self.__border = pygame.image.load('Others/lifeBar.png')
         
         # Sets variables
         self.__screen = screen
