@@ -16,12 +16,12 @@ class GameButton(pygame.sprite.Sprite):
         # If it is in the menu; upload these variables
         if menu:
             for sprite in range(2):
-                self.__buttons.append(pygame.image.load('images/Menu/'+ button + str(sprite) + '.png'))
+                self.__buttons.append(pygame.image.load('Menu/'+ button + str(sprite) + '.png'))
         
         # Otherwise it is part of the end game screen; upload these variables
         else:
             for sprite in range(2):
-                self.__buttons.append(pygame.image.load('images/EndGameScreen/' + button + str(sprite) + '.png'))
+                self.__buttons.append(pygame.image.load('EndGameScreen/' + button + str(sprite) + '.png'))
         
         # Set image as the unlit button sprite
         self.image = self.__buttons[0]
@@ -78,11 +78,11 @@ class Background(pygame.sprite.Sprite):
         
         # Upload menu image; with title and bright
         if menu:
-            self.image = pygame.image.load('images/Menu/MenuBack.png')
+            self.image = pygame.image.load('Menu/MenuBack.png')
         
         # Upload background image; without title and dark 
         else:
-            self.image = pygame.image.load('images/Menu/MenuBack1.png')
+            self.image = pygame.image.load('Menu/MenuBack1.png')
         
         self.image = self.image.convert()
         self.rect = self.image.get_rect()
@@ -100,7 +100,7 @@ class TutorialButtons(pygame.sprite.Sprite):
         # Uploads buttons
         self.__buttons = []
         for sprite in range(6):
-            self.__buttons.append(pygame.image.load('images/Tutorial/Button' + str(sprite) + '.png'))
+            self.__buttons.append(pygame.image.load('Tutorial/Button' + str(sprite) + '.png'))
         
         # Checks which button it is and set images
         if button == 'A':
@@ -159,7 +159,7 @@ class TutorialText(pygame.sprite.Sprite):
         # Uploads texts images to guide player during the tutorial
         self.__texts = []
         for sprite in range(5):
-            self.__texts.append(pygame.image.load('images/Tutorial/Text/Text' + str(sprite) + '.png'))
+            self.__texts.append(pygame.image.load('Tutorial/Text/Text' + str(sprite) + '.png'))
         
         # Sets image
         self.image = self.__texts[0]
