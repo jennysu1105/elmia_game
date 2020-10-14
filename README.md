@@ -1,6 +1,8 @@
 # elmia_game
 Date: January 2017 - June 2017
 
+Run Program using Elmia.py
+
 A platforming game I made in grade 11 using Python 2 and Maplestory sprites
 This is something a made a long time ago. There my be some sprite errors since I had to move around some sprites for GitHub.
 It is the first major project I did in terms of code and it wasn't too bad. 
@@ -17,3 +19,8 @@ This game uses mechanics such as:
     - you teleport to your fairy friend
   - interactions with a hostile animal 
   - energy orbs that refill energy
+
+Things to improve:
+  - more maps
+  - improve clunkiness of controls and graphics
+  - fix graphic error displayed in console
