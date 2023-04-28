@@ -736,7 +736,8 @@ class EnergyBar(pygame.sprite.Sprite):
         true or false depending if the player has enough energy to teleport'''
         # Drains energy so that player cannot teleport unless player has 1/2 of the energy bar
         if self.__energyLeft >= 99:
-            self.__energyLeft -= 99
+            self.__energyLeft -= 100
+            self.reset()
             return True
         else:
             return False
@@ -982,12 +983,12 @@ class PastTimesKeeper(pygame.sprite.Sprite):
                         
                         # If seconds without minutes is single digit
                         if self.__mapTimes[level][number] - int(self.__mapTimes[level][number]/60) * 60 >10:
-                            cell = self.__fonts[0].render(str(number+1) + '. ' + str(self.__mapTimes[level][number]/60) + ':' + str(self.__mapTimes[level][number] - int(self.__mapTimes[level][number])/60*60), 1, (255, 255, 255))
+                            cell = self.__fonts[0].render(str(number+1) + '. ' + str(self.__mapTimes[level][number]/60)[0] + ':' + str(self.__mapTimes[level][number] % 60)[:2], 1, (255, 255, 255))
                             
                         # Otherwise:
                         else: 
-                            cell = self.__fonts[0].render(str(number+1) + '. ' + str(self.__mapTimes[level][number]/60) + ':0' + str(self.__mapTimes[level][number] - int(self.__mapTimes[level][number]/60)*60), 1, (255, 255, 255))
-                    
+                            cell = self.__fonts[0].render(str(number+1) + '. ' + str(self.__mapTimes[level][number]/60)[0] + ':0' + str(self.__mapTimes[level][number] % 60)[:2], 1, (255, 255, 255))
+
                     # If the slot is empty
                     else:
                         cell = self.__fonts[0].render(str(number+1) + '. --:--', 1, (255, 255, 255))

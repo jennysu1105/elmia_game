@@ -35,7 +35,7 @@ def endGameScreen(screen, background, finishedGame):
     
     # Objects
     titleBack = menuSprites.Background(False)
-    titleBack.image.blit(pygame.image.load('images/EndGameScreen/Game Over.png'), (0, 0))
+    titleBack.image.blit(pygame.image.load('EndGameScreen/Game Over.png'), (0, 0))
     
     backToTitle = menuSprites.GameButton(screen, False, 'BackToTitleScreen')
     exitGame = menuSprites.GameButton(screen, False, 'ExitGame')
@@ -474,7 +474,6 @@ def mainGame(screen, background, tutorial):
             
             # Adds to the level
             level += 1
-            
             # If there are no more maps, change it into the end game screen
             if level == 3:
                 keepGoing, toMenu = endGameScreen(screen, background, True)
@@ -517,7 +516,7 @@ def highScores(screen, background):
     toMenu = False
     
     scrolling = [False, 'none']
-    
+
     # Loop
     while keepGoing:
         
